@@ -13,8 +13,8 @@ until docker-compose exec db psql -U postgres -c '\l' >/dev/null 2>&1; do
   echo "PostGIS is unreachable - sleeping"; sleep 2
 done
 
-if [[ ! -f "./src/.env" ]]; then
-  cp ./src/.env.example ./src/.env
+if [[ ! -f ".env" ]]; then
+  cp .env.example .env
 fi
 
 echo "Install dependencies..."

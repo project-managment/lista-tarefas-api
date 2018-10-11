@@ -21,6 +21,6 @@ services:
   app:
     build: .
     volumes:
-      - ./src:/var/www
+      - .:/var/www
     depends_on:
       - db
