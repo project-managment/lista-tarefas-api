@@ -14,12 +14,14 @@ class TasksSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::firstOrCreate([
-          'name' => 'Yves',
-          'email' => 'yves@linux.com',
-          'password' => Hash::make('123'),
-          'api_token' => 'xxx'
-        ]);
+        $user = User::where('email', 'yves@linux.com')->first();
+        if(!$user)
+            $user = User::create([
+              'name' => 'Yves',
+              'email' => 'yves@linux.com',
+              'password' => Hash::make('123'),
+              'api_token' => 'xxx'
+            ]);
         Task::insert([
           [
             'title' => 'Terminar o sistema',
