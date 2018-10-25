@@ -12,7 +12,9 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    // return $router->app->version();
+    // return response()->json(['status' => 'on', 'version' => '0.0.1', 'title' => 'API do App Lista Tarefas'], 400);
+    return ['status' => 'on', 'version' => '0.0.1', 'title' => 'API do App Lista Tarefas'];
 });
 
 $router->group(['prefix' => 'user'], function () use ($router) {
