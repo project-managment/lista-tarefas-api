@@ -21,5 +21,6 @@ $router->group(['prefix' => 'user'], function () use ($router) {
     $router->post('authenticate', 'UserController@authenticate');
     $router->post('create', 'UserController@create');
 });
-
-$router->get('tasks', 'TaskController@get');
+$router->group(['middleware' => 'auth'], function () use ($router) {
+    $router->get('tasks', 'TaskController@get');
+});
