@@ -47,3 +47,8 @@ docker-compose up
 ```
 **3. Possíveis erros**
  * Caso apresente erro ao tentar modificar o arquivo `storage/logs/lumen.log` remova esse arquivo para que o Docker crie novamente o arquivo com as permissões necessárias
+
+
+**4. Como testar**
+ *docker -compose exec app php artisan db:seed lista-tarefas-api
+ *localhost:8000
