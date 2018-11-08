@@ -23,4 +23,5 @@ $router->group(['prefix' => 'user'], function () use ($router) {
 });
 $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('tasks', 'TaskController@get');
+    $router->get('tasks/date/{date}', 'TaskController@getFromDate');
 });
