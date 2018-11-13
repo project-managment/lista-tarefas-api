@@ -11,6 +11,7 @@ class TaskController extends Controller
       return Task::where('user_id', Auth::id())->get();
     }
     public function delete($id) {
-      return Task::where('id', $id)->update(array('deleted' => true));
+      Task::where('id', $id)->update(array('deleted' => true));
+      return ["status"=>"success"];  
     }
 }

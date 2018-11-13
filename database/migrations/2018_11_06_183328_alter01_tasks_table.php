@@ -13,7 +13,9 @@ class Alter01TasksTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::table('tasks', function (Blueprint $table) {
+        $table->boolean('deleted')->default(false);
+      });
     }
 
     /**
