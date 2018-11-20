@@ -24,4 +24,5 @@ $router->group(['prefix' => 'user'], function () use ($router) {
 $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('tasks', 'TaskController@get');
     $router->delete('tasks/{id}', 'TaskController@delete');
+    $router->update('tasks/{id}', 'TaskController@update');
 });
