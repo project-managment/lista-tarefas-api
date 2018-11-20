@@ -23,5 +23,9 @@ $router->group(['prefix' => 'user'], function () use ($router) {
 });
 $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('tasks', 'TaskController@get');
+<<<<<<< HEAD
     $router->get('tasks/date/{date}', 'TaskController@getFromDate');
+=======
+    $router->delete('tasks/{id}', 'TaskController@delete');
+>>>>>>> master
 });
